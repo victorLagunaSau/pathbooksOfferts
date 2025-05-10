@@ -74,12 +74,12 @@ li.check:before {
 }
 
 .animate-marquee-slow {
-    animation: marquee-slow 250s linear infinite;
+    animation: marquee-slow 400s linear infinite;
     will-change: transform;
 }
 
 .animate-marquee-slow2 {
-    animation: marquee-slow2 250s linear infinite;
+    animation: marquee-slow2 400s linear infinite;
     will-change: transform;
 }
 
