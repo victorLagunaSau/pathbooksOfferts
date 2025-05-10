@@ -3,120 +3,127 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 
 const Header = () => {
-	const [activeLink, setActiveLink] = useState(null);
-	const [scrollActive, setScrollActive] = useState(false);
-	const router = useRouter();
+    const [activeLink, setActiveLink] = useState(null);
+    const [scrollActive, setScrollActive] = useState(false);
+    const router = useRouter();
 
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			setScrollActive(window.scrollY > 20);
-		});
-		const {pathname} = router;
-		if (pathname.includes("/soportetecnico")) {
-			setActiveLink("soportetecnico");
-		} else {
-			setActiveLink("inicio");
-		}
-		return () => {
-			window.removeEventListener("scroll", () => {
-				setScrollActive(window.scrollY > 20);
-			});
-			unsubscribe();
-		};
-	}, [router.pathname]);
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            setScrollActive(window.scrollY > 20);
+        });
+        const {pathname} = router;
+        if (pathname.includes("/soportetecnico")) {
+            setActiveLink("soportetecnico");
+        } else {
+            setActiveLink("inicio");
+        }
+        return () => {
+            window.removeEventListener("scroll", () => {
+                setScrollActive(window.scrollY > 20);
+            });
+        };
+    }, [router.pathname]);
 
-	return (
-		<>
-			<header
-				className={
-					"fixed top-0 w-full z-30 bg-white-500 transition-all " +
-					(scrollActive
-						? " shadow-md pt-4 lg:pt-0"
-						: " pt-5 lg:pt-4")
-				}
-				style={{
-					backgroundImage: "url('/assets/bgheader.jpg')",
-				}}
-			>
-				<nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-3">
-					<div className="col-start-1 col-end-2 flex items-center">
-						<img src="/assets/logo.png" className="h-8 w-auto" alt=""/>
-					</div>
-					<ul className="hidden lg:flex col-start-4 col-end-8 text-white-100  items-center">
-						<Link href="/">
-							<a
-								onClick={() => setActiveLink("")}
-								className={`px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative ${
-									activeLink === "inicio"
-										? "text-warning animation-active"
-										: "text-white-100 hover:text-warning"
-								}`}
-							>
-								Inicio
-							</a>
-						</Link>
-						<Link href="/soportetecnico">
-							<a
-								onClick={() => setActiveLink("soportetecnico")}
-								className={`px-4 py-2 mx-2 cursor-pointer animation-hover inline-block relative ${
-									activeLink === "soportetecnico"
-										? "text-warning animation-active"
-										: "text-white-100 hover:text-warning"
-								}`}
-							>
-								Soporte Técnico
-							</a>
-						</Link>
-					</ul>
-				</nav>
-			</header>
+    return (
+        <>
+            {/* Desktop Header */}
+            <header
+                className={`fixed top-0 w-full z-30 transition-all duration-300 ${
+                    scrollActive
+                        ? "bg-white/90 shadow-lg py-2 backdrop-blur-sm"
+                        : "bg-white/80 py-3"
+                }`}
+                style={{
+                    backgroundImage: "url('/assets/bgheader.jpg')",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center"
+                }}
+            >
+                <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex justify-between items-center h-16">
+                    <div className="flex items-center">
+                        <img
+                            src="/assets/logo.png"
+                            className="h-10 w-auto object-contain"
+                            alt="Logo Pathbooks"
+                        />
+                    </div>
 
-			{/* Mobile Navigation */}
-			<nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 px-4 sm:px-8 shadow-t ">
-				<div className="bg-white-500 sm:px-3">
-					<ul className="flex w-full justify-between items-center text-azulpathbooks">
-						<Link href="/">
-							<a
-								onClick={() => setActiveLink("inicio")}
-								className={
-									"mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-									(activeLink === "inicio"
-										? "bg-blue-100 border-azulpathbooks text-azulpathbooks"
-										: "border-transparent")
-								}
-							>
-								<img
-									src="/assets/icon/headerInicio.png"
-									alt="Icono"
-									style={{width: "28px", height: "28px"}}
-								/>
-								Inicio
-							</a>
-						</Link>
-						<Link href="/soportetecnico">
-							<a
-								onClick={() => setActiveLink("soportetecnico")}
-								className={
-									"mx-1 sm:mx-2 px-3 sm:px-4 py-2 flex flex-col items-center text-xs border-t-2 transition-all " +
-									(activeLink === "soportetecnico"
-										? "bg-blue-100 border-azulpathbooks text-azulpathbooks"
-										: "border-transparent")
-								}
-							>
-								<img
-									src="/assets/icon/headerPromo.png"
-									alt="Icono"
-									style={{width: "28px", height: "28px"}}
-								/>
-								Soporte Técnico
-							</a>
-						</Link>
-					</ul>
-				</div>
-			</nav>
-			{/* End Mobile Navigation */}
-		</>
-	);
+                    <ul className="hidden lg:flex items-center space-x-6">
+                        <Link href="/">
+                            <a
+                                onClick={() => setActiveLink("inicio")}
+                                className={`px-4 py-2 text-lg font-medium transition-colors duration-200 ${
+                                    activeLink === "inicio"
+                                        ? "text-yellow-500 border-b-2 botext-yellow-500"
+                                        : "text-gray-700 hover:text-blue-500"
+                                }`}
+                            >
+                                Inicio
+                            </a>
+                        </Link>
+                        <Link href="/soportetecnico">
+                            <a
+                                onClick={() => setActiveLink("soportetecnico")}
+                                className={`px-4 py-2 text-lg font-medium transition-colors duration-200 ${
+                                    activeLink === "soportetecnico"
+                                        ? "text-yellow-500 border-b-2 botext-yellow-500"
+                                        : "text-gray-700 hover:text-blue-500"
+                                }`}
+                            >
+                                Soporte Técnico
+                            </a>
+                        </Link>
+                        <button
+                            className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
+                            Comprar ahora
+                        </button>
+                    </ul>
+                </nav>
+            </header>
+
+            {/* Mobile Navigation */}
+            <nav className="fixed lg:hidden bottom-0 left-0 right-0 z-20 bg-white shadow-t-lg border-t border-gray-200">
+                <div className="px-4">
+                    <ul className="flex justify-around items-center py-2">
+                        <Link href="/">
+                            <a
+                                onClick={() => setActiveLink("inicio")}
+                                className={`flex flex-col items-center p-2 rounded-lg transition-all ${
+                                    activeLink === "inicio"
+                                        ? "bg-blue-50 text-yellow-500"
+                                        : "text-gray-600 hover:text-blue-500"
+                                }`}
+                            >
+                                <img
+                                    src="/assets/icon/headerInicio.png"
+                                    alt="Inicio"
+                                    className="w-7 h-7 mb-1"
+                                />
+                                <span className="text-xs font-medium">Inicio</span>
+                            </a>
+                        </Link>
+                        <Link href="/soportetecnico">
+                            <a
+                                onClick={() => setActiveLink("soportetecnico")}
+                                className={`flex flex-col items-center p-2 rounded-lg transition-all ${
+                                    activeLink === "soportetecnico"
+                                        ? "bg-blue-50 text-yellow-500"
+                                        : "text-gray-600 hover:text-blue-500"
+                                }`}
+                            >
+                                <img
+                                    src="/assets/icon/headerPromo.png"
+                                    alt="Soporte"
+                                    className="w-7 h-7 mb-1"
+                                />
+                                <span className="text-xs font-medium">Soporte</span>
+                            </a>
+                        </Link>
+                    </ul>
+                </div>
+            </nav>
+        </>
+    );
 };
 
 export default Header;
