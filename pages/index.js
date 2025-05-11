@@ -6,6 +6,8 @@ import Home002 from "../components/Home002";
 import ModuleDivision01 from "../components/ModuleDivision01";
 import ModuleDivision02 from "../components/ModuleDivision02";
 import Home003 from "../components/Home003";
+import Home004 from "../components/Home004";
+import Home005 from "../components/Home005";
 
 export default function Home() {
     return (
@@ -17,6 +19,8 @@ export default function Home() {
                 <Home002/>
                 <Home003/>
                 <ModuleDivision02/>
+                <Home004/>
+                <Home005/>
 
             </Layout>
         </>

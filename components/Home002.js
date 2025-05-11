@@ -8,11 +8,11 @@ const Home002 = () => {
     const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
     return (
-        <div className="bg-gradient-to-b from-gray-200 to-white-500 w-full overflow-hidden py-8 mt-8 mb-16" id="metodologia">
+        <div className="bg-gradient-to-b from-gray-200 to-white-500 w-full overflow-hidden py-8  mb-16" id="metodologia">
             <div className="container mx-auto px-4">
                 {/* Título centrado */}
                 <ScrollAnimationWrapper>
-                    <motion.div className=" mx-auto text-center" variants={scrollAnimation}>
+                    <motion.div className="mt-8 mx-auto text-center" variants={scrollAnimation}>
                         <h1 className="text-4xl md:text-6xl font-bold text-primary">
                             ¿Alguna vez has querido
                             <p>
