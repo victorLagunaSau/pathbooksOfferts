@@ -1,6 +1,8 @@
 import SeoHead from "../components/SeoHead";
 import Layout from "../components/Layout/Layout";
 import Home001 from "../components/Home001";
+import Home002 from "../components/Home002";
+
 import ModuleDivision01 from "../components/ModuleDivision01";
 
 export default function Home() {
@@ -10,6 +12,7 @@ export default function Home() {
             <Layout>
                 <Home001/>
                 <ModuleDivision01/>
+                <Home002/>
 
             </Layout>
         </>
