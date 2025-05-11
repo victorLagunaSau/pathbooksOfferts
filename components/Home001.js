@@ -27,7 +27,7 @@ const Home001 = () => {
                         >
                             <div className="relative w-[280px] h-[280px] sm:w-[570px] sm:h-[500px]">
                                 <Image
-                                    src="/assets/headermaestra.png"
+                                    src="/assets/home001.png"
                                     alt="Maestra Pathbooks"
                                     width={570}    // Ancho en píxeles
                                     height={600}   // Alto en píxeles
