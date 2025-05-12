@@ -46,20 +46,31 @@ const Home001 = () => {
                             variants={scrollAnimation}
                         >
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white-500">
-                               Fomenta el amor por la<span className="text-yellow-500"> lectura</span>
+                                Fomenta el amor por la<span className="text-yellow-500"> lectura</span>
                             </h1>
                             <p className="mt-6 text-lg md:text-xl text-white-100">
-                                Más de <span className="text-yellow-500"> 900 historias</span> especializadas en el aprendizaje lector y por primera vez abierto al público.
+                                Más de <span className="text-yellow-500"> 900 historias</span> especializadas en el
+                                aprendizaje lector y por primera vez abierto al público.
                             </p>
                             <p className="mt-3 text-xl md:text-2xl text-white-100">
-                                Por solo <span className="text-yellow-500">$ 800.00 MXN </span> ten acceso por todo un año.
+                                Por solo <span className="text-yellow-500 line-through">$ 1,480.00 MXN </span> ten acceso por todo un
+                                año.
                             </p>
+
+                            <p className="text-white-100 text-lg font-semibold">
+                                ¡Aprovecha un <span className="text-green-700 font-bold">47% de descuento!</span>
+                            </p>
+
+                            <p className="text-5xl font-bold text-yellow-600 mt-2 mb-4">$789 MXN</p>
+                            <p className="text-white-100 text-base">Pago único, sin suscripciones. Acceso total por 1
+                                año.</p>
                             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                                <ButtonComprar/>
                                 <a href="#metodologia"
-                                    className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-lg transition-all">
+                                   className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-full transition-all">
                                     Saber más
                                 </a>
-                                 <ButtonComprar/>
+
                             </div>
                         </motion.div>
                     </ScrollAnimationWrapper>

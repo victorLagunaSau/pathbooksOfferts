@@ -64,7 +64,7 @@ const Home006 = () => {
     ];
 
     return (
-        <div className="w-full py-20 bg-blue-50" id="contenido">
+        <div className="w-full py-20 bg-blue-50">
             <div className="container mx-auto px-6 md:px-12">
                 <ScrollAnimationWrapper>
                     <motion.div
