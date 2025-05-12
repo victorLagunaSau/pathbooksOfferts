@@ -41,10 +41,11 @@ const Home002 = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center ">
-                                <button
-                                    className="btn btn-primary bg-yellow-500 hover:bg-yellow-600 text-gray-900 hover:text-white px-6 py-3 rounded-lg transition-all">
-                                    Comprar ahora
-                                </button>
+                                 <a
+                                  href="#comprar"
+                                  className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
+                                  Comprar ahora
+                                </a>
                             </div>
                         </motion.div>
                     </ScrollAnimationWrapper>
