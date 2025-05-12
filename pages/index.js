@@ -8,6 +8,8 @@ import ModuleDivision02 from "../components/ModuleDivision02";
 import Home003 from "../components/Home003";
 import Home004 from "../components/Home004";
 import Home005 from "../components/Home005";
+import Home006 from "../components/Home006";
+import HomeComprar from "../components/HomeComprar";
 
 export default function Home() {
     return (
@@ -21,6 +23,9 @@ export default function Home() {
                 <ModuleDivision02/>
                 <Home004/>
                 <Home005/>
+                <Home006/>
+                <HomeComprar/>
+
 
             </Layout>
         </>

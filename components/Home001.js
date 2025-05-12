@@ -9,7 +9,7 @@ const Home001 = () => {
 
     return (
         <div
-            className="relative min-h-[800px] mt-16 md:mt-2 md:h-[600px] max-h-[600px] w-full overflow-hidden"
+            className="relative min-h-[800px] mt-16 md:mt-0 md:h-[600px] max-h-[600px] w-full overflow-hidden"
             id="home"
             style={{
                 backgroundImage: "url('/assets/bgheader.png')",
@@ -58,10 +58,11 @@ const Home001 = () => {
                                     className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-lg transition-all">
                                     Saber más
                                 </button>
-                                <button
-                                    className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
-                                    Comprar ahora
-                                </button>
+                                 <a
+                                  href="#comprar"
+                                  className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
+                                  Comprar ahora
+                                </a>
                             </div>
                         </motion.div>
                     </ScrollAnimationWrapper>

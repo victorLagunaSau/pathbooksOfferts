@@ -83,6 +83,9 @@ li.check:before {
     will-change: transform;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 
 
 

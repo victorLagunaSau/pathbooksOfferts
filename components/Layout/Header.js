@@ -1,135 +1,169 @@
-import React, {useState, useEffect} from "react";
-import Link from "next/link";
-import {useRouter} from "next/router";
+import React, {useState, useEffect, useRef} from "react";
 
 const Header = () => {
-    const [activeLink, setActiveLink] = useState(null);
     const [scrollActive, setScrollActive] = useState(false);
-    const router = useRouter();
+    const [menuOpen, setMenuOpen] = useState(false);
+    const [activeLink, setActiveLink] = useState("home");
+    const indicatorRef = useRef(null);
+    const buttonRefs = useRef({});
+
+    const sections = ["home", "metodologia", "contenido"];
 
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+        const handleScroll = () => {
             setScrollActive(window.scrollY > 20);
-        });
-        const {pathname} = router;
-        if (pathname.includes("/soportetecnico")) {
-            setActiveLink("soportetecnico");
-        } else {
-            setActiveLink("inicio");
-        }
-        return () => {
-            window.removeEventListener("scroll", () => {
-                setScrollActive(window.scrollY > 20);
-            });
         };
-    }, [router.pathname]);
+
+        window.addEventListener("scroll", handleScroll);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveLink(entry.target.id);
+                    }
+                });
+            },
+            {
+                rootMargin: "-50% 0px -50% 0px",
+                threshold: 0,
+            }
+        );
+
+        sections.forEach((id) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            observer.disconnect();
+        };
+    }, []);
+
+    // Mueve la barra al botón activo
+    useEffect(() => {
+        const activeBtn = buttonRefs.current[activeLink];
+        const indicator = indicatorRef.current;
+
+        if (activeBtn && indicator) {
+            indicator.style.width = `${activeBtn.offsetWidth}px`;
+            indicator.style.left = `${activeBtn.offsetLeft - 20}px`;
+        }
+    }, [activeLink, menuOpen]);
+
+    const getLinkClass = (id) =>
+        `relative mb px-4 py-2 text-xl font-medium transition-colors ${
+            activeLink === id ? "text-yellow-500" : "text-gray-100 hover:text-yellow-500"
+        }`;
 
     return (
         <>
-            {/* Desktop Header */}
             <header
-  className={`fixed top-0 w-full z-30 transition-all duration-300 ${
-    scrollActive
-      ? "bg-white/90 shadow-lg py-2 backdrop-blur-sm"
-      : "bg-white/80 py-3"
-  }`}
-  style={{
-    backgroundImage: "url('/assets/bgheader.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center"
-  }}
->
-  <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex justify-between items-center h-16">
-    {/* Logo (siempre a la izquierda) */}
-    <div className="flex items-center">
-      <img
-        src="/assets/logo.png"
-        className="h-10 w-auto object-contain"
-        alt="Logo Pathbooks"
-      />
-    </div>
+                className={`fixed top-0 w-full z-30 transition-all duration-300 ${
+                    scrollActive ? "bg-azulpathbooks  shadow-lg py-2 backdrop-blur-sm " : "py-3 bg-azulpathbooks "
+                }`}
+            >
+                <nav
+                    className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto flex justify-between items-center h-16 relative">
+                    {/* Logos */}
+                    <div className="flex items-center">
+                        <img
+                            src="/assets/logo.png"
+                            className="h-10 w-auto object-contain hidden lg:block"
+                            alt="Logo Pathbooks"
+                        />
+                        <img
+                            src="/assets/logocel.png"
+                            className="h-8 w-auto object-contain block lg:hidden"
+                            alt="Logo Pathbooks Mobile"
+                        />
+                    </div>
 
-    {/* Contenedor para elementos derechos */}
-    <div className="flex items-center space-x-4">
-      {/* Menú de navegación (oculto en móvil) */}
-      <ul className="hidden lg:flex items-center space-x-6">
-        <Link href="/">
-          <a
-            onClick={() => setActiveLink("inicio")}
-            className={`px-4 py-2 text-lg font-medium transition-colors duration-200 ${
-              activeLink === "inicio"
-                ? "text-yellow-500 border-b-2 border-yellow-500"
-                : "text-gray-700 hover:text-blue-500"
-            }`}
-          >
-            Inicio
-          </a>
-        </Link>
-        <Link href="/soportetecnico">
-          <a
-            onClick={() => setActiveLink("soportetecnico")}
-            className={`px-4 py-2 text-lg font-medium transition-colors duration-200 ${
-              activeLink === "soportetecnico"
-                ? "text-yellow-500 border-b-2 border-yellow-500"
-                : "text-gray-700 hover:text-blue-500"
-            }`}
-          >
-            Soporte Técnico
-          </a>
-        </Link>
-      </ul>
+                    {/* Comprar + Navegación */}
+                    <div className="flex items-center space-x-4 relative">
 
-      {/* Botón Comprar ahora (siempre visible) */}
-      <button
-        className="btn btn-primary bg-yellow-500 hover:bg-yellow-600 text-black hover:text-white px-4 py-2 md:px-6 md:py-3 rounded-lg transition-all text-sm md:text-base"
-      >
-        Comprar ahora
-      </button>
-    </div>
-  </nav>
-</header>
 
-            {/* Mobile Navigation */}
-            <nav className="bg-white-500 fixed lg:hidden bottom-0 left-0 right-0 z-20 bg-white shadow-t-lg border-t border-gray-200">
-                <div className="px-4">
-                    <ul className="flex justify-around items-center py-2">
-                        <Link href="/">
-                            <a
-                                onClick={() => setActiveLink("inicio")}
-                                className={`flex flex-col items-center p-2 rounded-lg transition-all ${
-                                    activeLink === "inicio"
-                                        ? "bg-blue-50 text-yellow-500"
-                                        : "text-gray-600 hover:text-blue-500"
-                                }`}
+                        {/* Desktop Nav */}
+                        <ul className="hidden lg:flex items-center space-x-6 relative">
+                            {sections.map((section) => (
+                                <li key={section}>
+                                    <a
+                                        href={`#${section}`}
+                                        ref={(el) => (buttonRefs.current[section] = el)}
+                                        className={getLinkClass(section)}
+                                    >
+                                        {section === "home"
+                                            ? "Inicio"
+                                            : section === "metodologia"
+                                                ? "¿Por qué Pathbooks ?"
+                                                : "Contenido"}
+                                    </a>
+                                </li>
+                            ))}
+                            <span
+                                ref={indicatorRef}
+                                className="absolute bottom-0 h-1 bg-yellow-500 transition-all duration-300 ease-in-out"
+                                style={{width: 0, left: 0}}
+                            />
+                        </ul>
+
+                        <a
+                            href="#comprar"
+                            className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
+                            Comprar ahora
+                        </a>
+
+                        {/* Menú hamburguesa */}
+                        <div className="lg:hidden">
+                            <button
+                                onClick={() => setMenuOpen(!menuOpen)}
+                                className="text-gray-100 hover:text-yellow-500 focus:outline-none"
                             >
-                                <img
-                                    src="/assets/icon/headerInicio.png"
-                                    alt="Inicio"
-                                    className="w-7 h-7 mb-1"
-                                />
-                                <span className="text-xs font-medium">Inicio</span>
-                            </a>
-                        </Link>
-                        <Link href="/soportetecnico">
-                            <a
-                                onClick={() => setActiveLink("soportetecnico")}
-                                className={`flex flex-col items-center p-2 rounded-lg transition-all ${
-                                    activeLink === "soportetecnico"
-                                        ? "bg-blue-50 text-yellow-500"
-                                        : "text-gray-600 hover:text-blue-500"
-                                }`}
-                            >
-                                <img
-                                    src="/assets/icon/headerPromo.png"
-                                    alt="Soporte"
-                                    className="w-7 h-7 mb-1"
-                                />
-                                <span className="text-xs font-medium">Soporte</span>
-                            </a>
-                        </Link>
-                    </ul>
-                </div>
-            </nav>
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
+                                          d="M4 6h16M4 12h16M4 18h16"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+
+                {/* Mobile Menu */}
+                {menuOpen && (
+                    <div className="lg:hidden bg-white/95 shadow-md py-4 px-6">
+                        <ul className="flex flex-col space-y-4">
+                            {sections.map((section) => (
+                                <li key={section}>
+                                    <a
+                                        href={`#${section}`}
+                                        onClick={() => {
+                                            setMenuOpen(false);
+                                            setActiveLink(section);
+                                        }}
+                                        className={`block text-lg font-medium transition ${
+                                            activeLink === section
+                                                ? "text-yellow-500"
+                                                : "text-gray-800 hover:text-blue-500"
+                                        }`}
+                                    >
+                                        {section === "home"
+                                            ? "Inicio"
+                                            : section === "metodologia"
+                                                ? "¿Por qué Pathbooks?"
+                                                : "Contenido"}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+            </header>
         </>
     );
 };

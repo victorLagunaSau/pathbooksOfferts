@@ -8,7 +8,7 @@ const Home002 = () => {
     const scrollAnimation = useMemo(() => getScrollAnimation(), []);
 
     return (
-        <div className="bg-gradient-to-b from-gray-200 to-white-500 w-full overflow-hidden py-8  mb-16" id="metodologia">
+        <div className="bg-gradient-to-b from-gray-200 to-white-500 w-full overflow-hidden py-8  mb-16" >
             <div className="container mx-auto px-4">
                 {/* Título centrado */}
                 <ScrollAnimationWrapper>
