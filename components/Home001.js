@@ -54,10 +54,10 @@ const Home001 = () => {
                                 Por solo <span className="text-yellow-500">$ 800.00 MXN </span> ten acceso por todo un año.
                             </p>
                             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                                <button
+                                <a href="#metodologia"
                                     className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-lg transition-all">
                                     Saber más
-                                </button>
+                                </a>
                                  <a
                                   href="#comprar"
                                   className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
