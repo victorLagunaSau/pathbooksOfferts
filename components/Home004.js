@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import Image from "next/image";
+import ButtonComprar from "./Buttons/ButtonComprar";
 
 const Home004 = () => {
     const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -42,11 +43,7 @@ const Home004 = () => {
 
                         {/* Botón */}
                         <div className="flex justify-center">
-                                 <a
-                                  href="#comprar"
-                                  className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
-                                  Comprar ahora
-                                </a>
+                                 <ButtonComprar/>
                         </div>
                     </motion.div>
                 </ScrollAnimationWrapper>

@@ -3,6 +3,7 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import ButtonComprar from "./Buttons/ButtonComprar";
 
 const Home001 = () => {
     const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -58,11 +59,7 @@ const Home001 = () => {
                                     className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-lg transition-all">
                                     Saber más
                                 </a>
-                                 <a
-                                  href="#comprar"
-                                  className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
-                                  Comprar ahora
-                                </a>
+                                 <ButtonComprar/>
                             </div>
                         </motion.div>
                     </ScrollAnimationWrapper>

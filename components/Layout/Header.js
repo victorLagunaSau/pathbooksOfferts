@@ -1,4 +1,5 @@
 import React, {useState, useEffect, useRef} from "react";
+import ButtonComprar from "../Buttons/ButtonComprar";
 
 const Header = () => {
     const [scrollActive, setScrollActive] = useState(false);
@@ -85,7 +86,7 @@ const Header = () => {
 
 
                         {/* Desktop Nav */}
-                        <ul className="hidden lg:flex items-center space-x-6 relative">
+                        <ul className="hidden lg:flex items-center space-x-6 relative mr-16">
                             {sections.map((section) => (
                                 <li key={section}>
                                     <a
@@ -108,11 +109,8 @@ const Header = () => {
                             />
                         </ul>
 
-                        <a
-                            href="#comprar"
-                            className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
-                            Comprar ahora
-                        </a>
+                        <ButtonComprar/>
+
 
                         {/* Menú hamburguesa */}
                         <div className="lg:hidden">

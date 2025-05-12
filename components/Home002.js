@@ -3,6 +3,7 @@ import Image from "next/image";
 import {motion} from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
+import ButtonComprar from "./Buttons/ButtonComprar";
 
 const Home002 = () => {
     const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -41,11 +42,7 @@ const Home002 = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center ">
-                                 <a
-                                  href="#comprar"
-                                  className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-6 py-3 rounded-lg transition-all">
-                                  Comprar ahora
-                                </a>
+                                 <ButtonComprar/>
                             </div>
                         </motion.div>
                     </ScrollAnimationWrapper>
