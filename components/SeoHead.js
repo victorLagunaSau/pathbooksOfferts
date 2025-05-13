@@ -5,7 +5,7 @@ const defaultMeta = {
   title: 'Pathbooks',
   siteName: 'Pathbooks',
   description:
-    'Maestros Pathbooks ',
+    'OFERTA ESPECIAL - PATHBOOKS',
   // change base url of your web (without '/' at the end)
   url: 'https://offerts.pathbooks.app/',
   type: 'website',

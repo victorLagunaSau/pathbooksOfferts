@@ -15,7 +15,7 @@ import ModuleDivision03 from "../components/ModuleDivision03";
 export default function Home() {
     return (
         <>
-            <SeoHead title='Maestros-Pathbooks'/>
+            <SeoHead title='Ofertas-Pathbooks'/>
             <Layout>
                 <Home001/>
                 <ModuleDivision01/>
