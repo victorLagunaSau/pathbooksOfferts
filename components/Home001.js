@@ -1,6 +1,6 @@
-import React, {useMemo} from "react";
+import React, { useMemo } from "react";
 import Image from "next/image";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import ButtonComprar from "./Buttons/ButtonComprar";
@@ -15,12 +15,12 @@ const Home001 = () => {
             style={{
                 backgroundImage: "url('/assets/bgheader.png')",
                 backgroundSize: "cover",
-                backgroundPosition: "center"
+                backgroundPosition: "center",
             }}
         >
             <div className="container mx-auto h-full px-4">
                 <div className="flex flex-col md:flex-row h-full items-center justify-between gap-8">
-                    {/* Imagen - Izquierda en desktop, arriba en mobile */}
+                    {/* Imagen */}
                     <ScrollAnimationWrapper className="order-1 md:order-1 w-full md:w-1/2">
                         <motion.div
                             className="flex justify-center md:justify-start"
@@ -30,8 +30,8 @@ const Home001 = () => {
                                 <Image
                                     src="/assets/home001.png"
                                     alt="Maestra Pathbooks"
-                                    width={570}    // Ancho en píxeles
-                                    height={600}   // Alto en píxeles
+                                    width={570}
+                                    height={600}
                                     className="object-contain"
                                     priority
                                 />
@@ -39,7 +39,7 @@ const Home001 = () => {
                         </motion.div>
                     </ScrollAnimationWrapper>
 
-                    {/* Texto - Derecha en desktop, abajo en mobile */}
+                    {/* Texto */}
                     <ScrollAnimationWrapper className="order-2 md:order-2 w-full md:w-1/2">
                         <motion.div
                             className="text-center md:text-left"
@@ -49,28 +49,24 @@ const Home001 = () => {
                                 Fomenta el amor por la<span className="text-yellow-500"> lectura</span>
                             </h1>
                             <p className="mt-6 text-lg md:text-xl text-white-100">
-                                Más de <span className="text-yellow-500"> 900 historias</span> especializadas en el
-                                aprendizaje lector y por primera vez abierto al público.
+                                Más de <span className="text-yellow-500">900 historias interactivas</span> diseñadas
+                                para fortalecer el aprendizaje lector desde casa o en el aula.
                             </p>
-                            <p className="mt-3 text-xl md:text-2xl text-white-100">
-                                Por solo <span className="text-yellow-500 line-through">$ 1,480.00 MXN </span> ten acceso por todo un
-                                año.
+                            <p className="mt-4 text-xl md:text-2xl text-white-100">
+                                Descubre nuestras opciones de acceso flexible: mensual, semestral o anual.
                             </p>
-
-                            <p className="text-white-100 text-lg font-semibold">
-                                ¡Aprovecha un <span className="text-green-700 font-bold">47% de descuento!</span>
+                            <p className="mt-2 text-white-100 text-lg font-semibold">
+                                Sin suscripciones. Sin complicaciones. Tú decides cómo empezar.
                             </p>
 
-                            <p className="text-5xl font-bold text-yellow-600 mt-2 mb-4">$789 MXN</p>
-                            <p className="text-white-100 text-base">Pago único, sin suscripciones. Acceso total por 1
-                                año.</p>
                             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                                 <ButtonComprar/>
-                                <a href="#metodologia"
-                                   className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-full transition-all">
+                                <a
+                                    href="#metodologia"
+                                    className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-full transition-all"
+                                >
                                     Saber más
                                 </a>
-
                             </div>
                         </motion.div>
                     </ScrollAnimationWrapper>
