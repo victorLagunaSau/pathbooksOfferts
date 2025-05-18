@@ -5,7 +5,7 @@ import ButtonPago03 from "./Buttons/ButtonPago03";
 
 const PlanesPrecios = () => {
     return (
-        <section className="bg-white-100 py-20 px-6 md:px-12 lg:px-24">
+        <section className="bg-white-100 py-20 px-6 md:px-12 lg:px-24" id="planes">
             <div className="max-w-7xl mx-auto text-center">
                 <h2 className="text-4xl md:text-5xl font-bold text-azulpathbooks mb-4">
                     Elige el plan perfecto para ti
