@@ -61,7 +61,7 @@ const PlanesPrecios = () => {
                             </p>
                             <p className="text-3xl font-bold text-gray-900 mb-1">$420 MXN</p>
                             <p className="text-sm text-green-600 mb-4">Ahorra un 43%</p>
-                            <p>Acceso durante: 6 meces</p>
+                            <p>Acceso durante: 6 meses</p>
                             <ul className="text-gray-500 space-y-2 text-sm leading-relaxed mt-4">
                                 <li>✔ Acceso completo al catálogo sin límites</li>
                                 <li>✔ Lecturas completas e interactivas</li>
@@ -96,7 +96,7 @@ const PlanesPrecios = () => {
                             </p>
                             <p className="text-3xl font-bold text-green-700 mb-1">$789 MXN</p>
                             <p className="text-sm text-green-600 mb-4">Aprovecha un 47% de descuento</p>
-                            <p>Acceso durante: 12 meces</p>
+                            <p>Acceso durante: 12 meses</p>
                             <ul className="text-gray-500 space-y-2 text-sm leading-relaxed mt-4">
                                 <li>✔ Acceso completo al catálogo sin límites</li>
                                 <li>✔ Lecturas completas e interactivas</li>
