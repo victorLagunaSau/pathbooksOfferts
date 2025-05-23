@@ -12,7 +12,7 @@ const BotonComprar = () => {
     <a
       href="#planes"
       onClick={handleClick}
-      className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100 hover:text-white-100 px-10 py-3 rounded-full transition-all"
+      className="btn btn-primary bg-yellow-500 hover:bg-yellow-700 text-black-100  px-10 py-3 rounded-full transition-all border-yellow-700 border-4 shadow-sm shadow-black-500"
     >
       Conocer los planes
     </a>

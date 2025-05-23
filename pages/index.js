@@ -11,6 +11,7 @@ import Home005 from "../components/Home005";
 import Home006 from "../components/Home006";
 import HomeComprar from "../components/HomeComprar";
 import ModuleDivision03 from "../components/ModuleDivision03";
+import Demo from "../components/Demo";
 
 export default function Home() {
     return (
@@ -20,6 +21,7 @@ export default function Home() {
                 <Home001/>
                 <ModuleDivision01/>
                 <Home002/>
+                <Demo/>
                 <Home003/>
                 <ModuleDivision02/>
                 <Home004/>

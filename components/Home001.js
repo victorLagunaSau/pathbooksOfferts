@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layout/ScrollAnimationWrapper";
 import ButtonComprar from "./Buttons/ButtonComprar";
+import ButtonPruebaPathbooks from "./Buttons/ButtonPruebaPathbooks";
 
 const Home001 = () => {
     const scrollAnimation = useMemo(() => getScrollAnimation(), []);
@@ -61,12 +62,7 @@ const Home001 = () => {
 
                             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                                 <ButtonComprar/>
-                                <a
-                                    href="#metodologia"
-                                    className="btn btn-outline border-yellow-500 text-yellow-500 hover:bg-yellow-500 hover:text-yellow-700 px-6 py-3 rounded-full transition-all"
-                                >
-                                    Saber más
-                                </a>
+                                <ButtonPruebaPathbooks/>
                             </div>
                         </motion.div>
                     </ScrollAnimationWrapper>

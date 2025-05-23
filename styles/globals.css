@@ -87,8 +87,27 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer utilities {
+  .prose-center img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
 
 
+.your-content-class p,
+.your-content-class img,
+.your-content-class h1,
+.your-content-class h2 {
+  margin-bottom: 1.5rem; /* espacio abajo entre cada bloque */
+}
+
+.your-content-class img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; /* para centrar imágenes */
+}
 /* purgecss end ignore */
 @tailwind utilities;
 /* purgecss start ignore */
