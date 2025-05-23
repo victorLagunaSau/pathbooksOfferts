@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from "react";
 import {motion, AnimatePresence} from "framer-motion";
 
+
 const covers = [
     {
         id: "H3Ts3cmPqN3BIyf0nUUS",

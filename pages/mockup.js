@@ -252,35 +252,43 @@ const Mockup = () => {
         <div id="top"
              className="overflow-x-hidden bg-white-100 p-2 rounded-lg shadow-lg w-full h-full pb-40 overflow-scroll">
             {isContactVisible && (
-               <div
-  className="bg-white-100 fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50 p-4 overflow-auto"
-  style={{ backgroundImage: "url('/assets/bg-books.jpg')", backgroundSize: 'cover', backgroundPosition: 'center' }}
->
-  <div className={`bg-white-500 rounded-3xl shadow-2xl max-w-xl w-full text-center p-10 grid gap-6 ${pageWidth < 800 ? "pt-8 pb-16" : "pt-12 pb-24"}`}>
-    <img src="/assets/logoAzul.png" alt="logo Pathbooks" className="mx-auto w-3/12 drop-shadow-lg"/>
+                <div
+                    className="bg-white-100 fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50 p-4 overflow-auto"
+                    style={{
+                        backgroundImage: "url('/assets/bg-books.jpg')",
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center'
+                    }}
+                >
+                    <div
+                        className={`bg-white-500 rounded-3xl shadow-2xl max-w-xl w-full text-center p-10 grid gap-6 ${pageWidth < 800 ? "pt-8 pb-16" : "pt-12 pb-24"}`}>
+                        <img src="/assets/logoAzul.png" alt="logo Pathbooks" className="mx-auto w-3/12 drop-shadow-lg"/>
 
-    <h2 className="text-3xl font-extrabold text-azulpathbooks drop-shadow-md">
-      ¡Tu viaje lector apenas comienza!
-    </h2>
+                        <h2 className="text-3xl font-extrabold text-azulpathbooks drop-shadow-md">
+                            ¡Tu viaje lector apenas comienza!
+                        </h2>
 
-    <p className="text-lg text-slate-700 px-6 leading-relaxed">
-      Más de <strong>900 historias fascinantes</strong>, biografías interactivas, audiolibros, y lecturas académicas.<br/>
-      Guarda tu progreso y accede a contenido desde <strong>preescolar hasta bachillerato</strong>.
-    </p>
+                        <p className="text-lg text-slate-700 px-6 leading-relaxed">
+                            Más de <strong>900 historias fascinantes</strong>, biografías interactivas, audiolibros, y
+                            lecturas académicas.<br/>
+                            Guarda tu progreso y accede a contenido desde <strong>preescolar hasta bachillerato</strong>.
+                        </p>
 
-    <div className="flex flex-col sm:flex-row justify-around text-blue-800 gap-3 text-left px-6 text-sm font-semibold">
-      <div>📚 Historias interactivas</div>
-      <div>🎧 Audiolibros incluidos</div>
-      <div>🎓 Contenido por nivel escolar</div>
-    </div>
+                        <div
+                            className="flex flex-col sm:flex-row justify-around text-blue-800 gap-3 text-left px-6 text-sm font-semibold">
+                            <div>📚 Historias interactivas</div>
+                            <div>🎧 Audiolibros incluidos</div>
+                            <div>🎓 Contenido por nivel escolar</div>
+                        </div>
 
-    <ButtonFinDemo className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-105 transform hover:brightness-110 transition-all duration-300 text-white font-bold px-10 py-4 rounded-full shadow-lg shadow-yellow-800 border-none" />
+                        <ButtonFinDemo
+                            className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:scale-105 transform hover:brightness-110 transition-all duration-300 text-white font-bold px-10 py-4 rounded-full shadow-lg shadow-yellow-800 border-none"/>
 
-    <p className="italic text-gray-600 text-sm mt-2">
-      “Pathbooks cambió la forma en que mis hijos disfrutan la lectura.”
-    </p>
-  </div>
-</div>
+                        <p className="italic text-gray-600 text-sm mt-2">
+                            “Pathbooks cambió la forma en que mis hijos disfrutan la lectura.”
+                        </p>
+                    </div>
+                </div>
             )}
             {isFinishVisible && (
                 <div className="fixed inset-0 flex items-center justify-center z-50 mt-0 ">
@@ -350,7 +358,8 @@ const Mockup = () => {
                             Cuestionario de comprensión lectora
                         </h2>
                         <p className="text-center text-gray-600 mb-6">
-                             Los cuestionarios ayudan a reforzar lo leído, mejorando la comprensión, la memoria y la atención de forma divertida y educativa.
+                            Los cuestionarios ayudan a reforzar lo leído, mejorando la comprensión, la memoria y la
+                            atención de forma divertida y educativa.
                         </p>
                         <h2 className="text-2xl font-bold mb-4 text-center text-black-500">
                             Lectura: {json?.info?.title?.[lang]}
